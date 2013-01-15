@@ -4,14 +4,16 @@ Version:	1.5.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-URL:		http://mate-desktop.org/
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
 # Source0-md5:	aa3781beb79ceb8126df589cea481140
+URL:		http://wiki.mate-desktop.org/libmatekbd
 BuildRequires:	desktop-file-utils
-BuildRequires:	mate-common
-BuildRequires:	pkgconfig(gsettings-desktop-schemas)
-BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	pkgconfig(libxklavier)
+BuildRequires:	glib2-devel >= 1:2.18
+BuildRequires:	gsettings-desktop-schemas-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	intltool >= 0.35.0
+BuildRequires:	libxklavier-devel
+BuildRequires:	mate-common >= 1.5
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.26.0
@@ -45,16 +47,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-find $RPM_BUILD_ROOT -name '*.la' | xargs rm
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
-#desktop-file-install \
-#	--remove-category="MATE" \
-#	--add-category="X-Mate" \
-#	--delete-original \
-#	--dir=$RPM_BUILD_ROOT%{_desktopdir} \
-#$RPM_BUILD_ROOT%{_desktopdir}/matekbd-indicator-plugins-capplet.desktop
-
-%find_lang %{name} --all-name
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -71,7 +66,7 @@ fi
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING.LIB README
+%doc AUTHORS README
 %{_datadir}/libmatekbd
 %{_datadir}/glib-2.0/schemas/org.mate.peripherals-keyboard-xkb.gschema.xml
 %attr(755,root,root) %{_libdir}/libmatekbd.so.*.*.*
