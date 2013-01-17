@@ -7,9 +7,8 @@ Group:		X11/Libraries
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
 # Source0-md5:	aa3781beb79ceb8126df589cea481140
 URL:		http://wiki.mate-desktop.org/libmatekbd
-BuildRequires:	desktop-file-utils
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.18
-BuildRequires:	gsettings-desktop-schemas-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libxklavier-devel
