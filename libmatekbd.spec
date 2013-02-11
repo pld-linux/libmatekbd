@@ -1,11 +1,11 @@
 Summary:	Libraries for mate kbd
 Name:		libmatekbd
-Version:	1.5.0
+Version:	1.5.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	aa3781beb79ceb8126df589cea481140
+# Source0-md5:	5899888e87dd0c45fba81ec55091f37d
 URL:		http://wiki.mate-desktop.org/libmatekbd
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.18
@@ -47,6 +47,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
+# mate < 1.5 did not exist in pld, avoid dependency on mate-conf
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/MateConf/gsettings/matekbd.convert
 
 %find_lang %{name}
 
