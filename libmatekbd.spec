@@ -1,11 +1,11 @@
 Summary:	Libraries for mate kbd
 Name:		libmatekbd
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	9e17f7cc984c2723821d30375c5d7f2a
+# Source0-md5:	b865b63c0b0820bba6de7bc4977e3c70
 URL:		http://wiki.mate-desktop.org/libmatekbd
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.18
@@ -35,7 +35,6 @@ Development libraries for libmatekbd
 %setup -q
 
 %build
-NOCONFIGURE=1 ./autogen.sh
 %configure \
 	--disable-silent-rules \
 	--disable-static
