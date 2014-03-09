@@ -5,22 +5,26 @@
 Summary:	MATE keyboard libraries
 Summary(pl.UTF-8):	Biblioteki MATE do obsługi klawiatury
 Name:		libmatekbd
-Version:	1.6.2
+Version:	1.8.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	35880a6bc967ed3093e7c46a58958b1f
+Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
+# Source0-md5:	e2d7c8ee6d5375ed923c2399eb63aeab
 URL:		http://wiki.mate-desktop.org/libmatekbd
+BuildRequires:	autoconf >= 2.53
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.26
 %{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.18}
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0}
 BuildRequires:	intltool >= 0.35.0
+BuildRequires:	libtool
 BuildRequires:	libxklavier-devel >= 5.0
 BuildRequires:	mate-common >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
 Requires(post,postun):	/sbin/ldconfig
 Requires:	glib2 >= 1:2.26.0
@@ -56,6 +60,11 @@ Pliki programistyczne bibliotek libmatekbd.
 %setup -q
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-silent-rules \
 	--disable-static \
@@ -68,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
 
 # mate < 1.5 did not exist in pld, avoid dependency on mate-conf
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/MateConf/gsettings/matekbd.convert
