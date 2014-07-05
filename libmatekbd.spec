@@ -12,7 +12,7 @@ Group:		X11/Libraries
 Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
 # Source0-md5:	e2d7c8ee6d5375ed923c2399eb63aeab
 URL:		http://wiki.mate-desktop.org/libmatekbd
-BuildRequires:	autoconf >= 2.53
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.26
