@@ -14,7 +14,7 @@ Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
 URL:		http://wiki.mate-desktop.org/libmatekbd
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.26
 %{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.18}
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0}
