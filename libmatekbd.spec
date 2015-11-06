@@ -16,9 +16,10 @@ BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.36
+BuildRequires:	gobject-introspection-devel >= 0.6.7
 %{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.24}
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0}
-BuildRequires:	intltool >= 0.35.0
+BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libtool
 BuildRequires:	libxklavier-devel >= 5.0
 BuildRequires:	mate-common >= 1.5
