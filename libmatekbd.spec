@@ -5,12 +5,12 @@
 Summary:	MATE keyboard libraries
 Summary(pl.UTF-8):	Biblioteki MATE do obsługi klawiatury
 Name:		libmatekbd
-Version:	1.12.1
+Version:	1.14.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-%{version}.tar.xz
-# Source0-md5:	8c1c514a4921ef72405367abb4b70f49
+Source0:	http://pub.mate-desktop.org/releases/1.14/%{name}-%{version}.tar.xz
+# Source0-md5:	b7d4cbe8834388e0fd43302639a72cf3
 URL:		http://wiki.mate-desktop.org/libmatekbd
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -78,10 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
-
-# mate < 1.5 did not exist in pld, avoid dependency on mate-conf
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/MateConf/gsettings/matekbd.convert
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,jv}
 
 %find_lang %{name}
 
