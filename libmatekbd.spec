@@ -5,12 +5,12 @@
 Summary:	MATE keyboard libraries
 Summary(pl.UTF-8):	Biblioteki MATE do obsługi klawiatury
 Name:		libmatekbd
-Version:	1.14.0
+Version:	1.14.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://pub.mate-desktop.org/releases/1.14/%{name}-%{version}.tar.xz
-# Source0-md5:	b7d4cbe8834388e0fd43302639a72cf3
+# Source0-md5:	38783a2c4694911c1d1e606421bf86d4
 URL:		http://wiki.mate-desktop.org/libmatekbd
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
