@@ -78,7 +78,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,jv}
+
+# es_419 is bogus; frp,jv,ku_IQ,nah,nqo,sco not supported by glibc; ur_PK an empty copy of ur
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{es_419,frp,jv,ku_IQ,nah,nqo,sco,ur_PK}
 
 %find_lang %{name}
 
