@@ -5,12 +5,12 @@
 Summary:	MATE keyboard libraries
 Summary(pl.UTF-8):	Biblioteki MATE do obsługi klawiatury
 Name:		libmatekbd
-Version:	1.14.1
+Version:	1.16.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://pub.mate-desktop.org/releases/1.14/%{name}-%{version}.tar.xz
-# Source0-md5:	38783a2c4694911c1d1e606421bf86d4
+Source0:	http://pub.mate-desktop.org/releases/1.16/%{name}-%{version}.tar.xz
+# Source0-md5:	4d677fbac06d5f75d7230e7e8d5973ee
 URL:		http://wiki.mate-desktop.org/libmatekbd
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -21,7 +21,7 @@ BuildRequires:	gobject-introspection-devel >= 0.6.7
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0}
 BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libtool
-BuildRequires:	libxklavier-devel >= 5.0
+BuildRequires:	libxklavier-devel >= 5.2
 BuildRequires:	mate-common >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
@@ -32,7 +32,7 @@ Requires:	glib2 >= 1:2.36
 Requires:	gsettings-desktop-schemas
 %{!?with_gtk3:Requires:	gtk+2 >= 2:2.24}
 %{?with_gtk3:Requires:	gtk+3 >= 3.0}
-Requires:	libxklavier >= 5.0
+Requires:	libxklavier >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,7 +49,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.36
 %{!?with_gtk3:Requires:	gtk+2-devel >= 2:2.24}
 %{?with_gtk3:Requires:	gtk+3-devel >= 3.0}
-Requires:	libxklavier-devel >= 5.0
+Requires:	libxklavier-devel >= 5.2
 
 %description devel
 Development files for libmatekbd.
