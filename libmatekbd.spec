@@ -1,20 +1,19 @@
 Summary:	MATE keyboard libraries
 Summary(pl.UTF-8):	Biblioteki MATE do obsługi klawiatury
 Name:		libmatekbd
-Version:	1.22.0
+Version:	1.24.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://pub.mate-desktop.org/releases/1.22/%{name}-%{version}.tar.xz
-# Source0-md5:	7dba8af40864769f2de0982ef747679b
+Source0:	http://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
+# Source0-md5:	1392b7f3841ebfa703466e33b473e4ac
 URL:		http://wiki.mate-desktop.org/libmatekbd
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	gettext-tools
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	gobject-introspection-devel >= 0.6.7
 BuildRequires:	gtk+3-devel >= 3.22
-BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libtool
 BuildRequires:	libxklavier-devel >= 5.2
 BuildRequires:	mate-common >= 1.5
@@ -72,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 # es_419 is bogus; frp,jv,ku_IQ,nah,nqo,sco not supported by glibc; ur_PK an empty copy of ur
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{es_419,es_ES,frp,jv,ku_IQ,nah,nqo,sco,ur_PK}
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{es_419,es_ES,frp,ie,jv,ku_IQ,nah,nqo,sco,ur_PK}
 
 %find_lang %{name}
 
@@ -96,7 +95,6 @@ fi
 %attr(755,root,root) %ghost %{_libdir}/libmatekbd.so.4
 %attr(755,root,root) %{_libdir}/libmatekbdui.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmatekbdui.so.4
-%{_datadir}/libmatekbd
 %{_datadir}/glib-2.0/schemas/org.mate.peripherals-keyboard-xkb.gschema.xml
 %{_libdir}/girepository-1.0/Matekbd-1.0.typelib
 
