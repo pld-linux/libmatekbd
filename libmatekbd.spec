@@ -7,7 +7,7 @@ License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
 # Source0-md5:	ca0eb8271b3dd96b2483581021953607
-URL:		http://wiki.mate-desktop.org/libmatekbd
+URL:		https://wiki.mate-desktop.org/mate-desktop/libraries/libmatekbd/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-tools >= 0.19.8
@@ -70,7 +70,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
-# es_419 is bogus; frp,jv,ku_IQ,nah,nqo,sco not supported by glibc; ur_PK an empty copy of ur
+# es_419 is bogus
+# frp,ie,jv,ku_IQ,nah,nqo,pms,sco not supported by glibc
+# es_ES,ur_PK are empty copies of es,ur
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{es_419,es_ES,frp,ie,jv,ku_IQ,nah,nqo,pms,sco,ur_PK}
 
 %find_lang %{name}
